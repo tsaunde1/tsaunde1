@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hwk3P3</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="tempature Conversion">
+ 
+    <style>
+       body {
+  background-color: lightblue;
+}
+        h1 {
+  color: white;
+  text-align: center;
+}
+    </style>
+
+    <script>
+        function convertCtoF() {
+            var temperature, tempFloat, farenheitDeg;
+            temperature = document.getElementById("temperature").value;
+            tempFloat = parseFloat(temperature);
+            if (!Number.isNaN(tempFloat)) {
+                farenheitDeg = (9 / 5 * temperature) + 32;
+                document.getElementById("results").innerHTML = (temperature + "C is " + farenheitDeg.toFixed() + "F");
+            } else {
+                document.getElementById("results").innerHTML = ("Error! Please enter a valid number.");
+            }
+        }
+
+        function converFtoC() {
+            var temperature, tempFloat, celsiusDeg;
+            temperature = document.getElementById("temperature").value;
+            tempFloat = parseFloat(temperature);
+            if (!Number.isNaN(tempFloat)) {
+                celsiusDeg = 5 / 9 * (tempFloat - 32);
+                document.getElementById("results").innerHTML = (temperature + "F is " + celsiusDeg.toFixed() + "C");
+            } else {
+                document.getElementById("results").innerHTML = ("Error! Please enter a valid number.");
+            }
+        }
+
+        function res() {
+            document.getElementById("results").innerHTML = ("");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>CNIT 133 Homework 3 Part 3</h1>
+    <section class="body">
+        <div class="heading">
+            <h2>Temperature Conversion</h2>
+        </div>
+
+        <p id="tip"> The Convert to Farenheit button will convert the temperature from Celsius to Farenheit. <br>
+            The Convert to Celsius button will convert the temperature from Farenheit to Celsius.</p>
+
+        <p><label for="temperature">Enter the temperature to convert: </label><input type="number"
+                name="temperature" id="temperature" onfocus="this.value=''">
+        </p>
+
+        <div>
+            <input type="button" onclick="convertCtoF()" value="Convert to Farenheit">
+            <input type="button" onclick="converFtoC()" value="Convert to Celsius">
+            <input type="reset" onclick="res()" value="RESET">
+        </div>
+
+        <h3>Results: </h3>
+        <div class="results" id="results" style="width:200px;height:25px;background-color:#F0F8FF ;">
+        </div>
+    </section>
+
+    <section class="links">
+        <h4>Homework Links</h4>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="index.html">Main Homework Page</a></td>
+                <td style="width: 25%;"><a href="hw3.html">Students Grades</a></td>
+                <td style="width: 25%;"><a href="Hwk3P2.html">Salesperson Commission</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>

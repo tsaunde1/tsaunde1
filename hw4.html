@@ -1,13 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-body {background-color: lightblue;}
-</style>
-</head>
-<body>
+   
+    <meta charset="utf-8">
+    <meta name="description" content="Homework 4: Looping Statements">
+ <title>CNIT 133 Homework 4</title>
 
-<h1>Coming Soon</h1>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script> // jQuery UI Draggable
+  $( function() {
+    $( "#draggable" ).draggable();
+  } );
+</script>
+
+
+</head>
+
+<body>
+    <h1> CNIT 133 Homework 4: Looping Statements</h1>
+    <main class="container">
+    <h2>Part 1: Integer Calculation Loops</h2>
+    <h3>P1: Calculate every fourth integer from 5 to 25</h3>
+    <p id="productP1">Product:</p>
+    <p id="sumP1">Sum:</p> 
+ 
+    <h3>P2: Every third integer from 3 to 18</h3>
+    <p id="productP2">Product:</p>
+    <p id="sumP2">Sum:</p> 
+
+    <h3>P3: jQuery Draggable</h3>
+    <p>Drag the arrow.</p>
+    <img id="draggable" src="arrow.jpg" alt="arrow" width="300" height="200">
+
+  
+  </main>
+
+  <script>
+ // 1A: for loop
+    // product and sum of every third integer from 5 to 25 inclusive
+    var productP1 = 1;
+    var sumP1 = 0;
+
+    for (i=5; i<=25; i+=4) {
+      productP1 = productP1 * i;
+      sumP1 += i; // sum = sum + i
+    }
+
+    document.getElementById('productP1').innerHTML = "The result of 5 * 9 * 13 * 17 * 21 * 25 is " + productP1.toLocaleString(); // 5221125
+    document.getElementById('sumP1').innerHTML = "The result of 5 + 9 + 13 + 17 + 21 + 25 is " + sumP1.toLocaleString(); // 90
+ 
+      // P2: while or do-while loop
+    // product and sum of every third integer from 3 to 31 inclusive
+
+    var i = 3;
+    var productP2 = 1;
+    var sumP2 = 0;
+
+    while (i<=18) {
+      productP2 = productP2 * i;
+      sumP2 += i;
+      i += 3;
+  
+    }
+
+    document.getElementById('productP2').innerHTML = "The result of 3 * 6 * 9 * 12 * 15 * 18 is " + productP2.toLocaleString(); // 524, 880
+    document.getElementById('sumP2').innerHTML = "The result of 3 + 6 + 9 + 12 + 15 + 18 is " + sumP2.toLocaleString(); // 63
+    
+  </script>
+
 <p><a href="index.html">Back to Homework 1</a></p>
+<p><a href="hw4P2.html">To homework 4 Part 2</a></p>
+
 </body>
 </html>

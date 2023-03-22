@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="description" content="compound interest">
+    <title>CNIT133 HW4 Part 2</title>
+
+    <style>
+        body {
+            background-color: lightcyan;
+        }
+
+        h3 {
+            font-size: 15px;
+        }
+
+        .results {
+            padding: 5px;
+            font-size: 15px;
+        }
+
+        .links td {
+            
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        table {
+            text-align: center;
+            padding: 3px;
+            width: 350px;
+            background-color: lightblue;
+        }
+
+        table thead:first-child tr {
+            background-color: #9933ff;
+        }
+
+        table>tbody>:nth-child(n) {
+            background-color: lightskyblue;
+        }
+
+        table>tbody>:nth-child(2n) {
+            background-color: #3366ff;
+        }
+        H1 { text-align: center }
+    </style>
+
+</head>
+
+<body>
+    <section class="body">
+        <h1>Learn about Compound Interest</h1>
+        <p> Calculate compound interest on a principal of $1000 for interest rates of 5%, 6%, and 7%, for years 1 through
+            5.</p>
+    </section>
+
+    <script>
+      
+ let p = 1000
+let r, a, total
+for (let i = 7; i>4; i--){
+  document.write('<table><thead><tr><th>Year</th><th>Amount on Deposit</th><th>Interest Rate</th></tr></thead>')
+  r = i/100
+  console.log(r)
+  for(let n = 1; n<6; n++){
+    document.write('<tr>')
+  a = p*(1 + r*n)
+  total = a.toFixed(2)
+  document.write('<td>'+n+'</td><td> $ '+total+'</td><td>'+r+'</td></tr>')
+}
+document.write('</table>')
+}
+    </script>
+
+
+    <section class="links">
+        <h4>Links To Other Parts of Homework 4</h4>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="index.html">Main Page</a></td>
+                <td style="width: 25%;"><a href="hw4.html">Homework 4 Part 1</a></td>
+                
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

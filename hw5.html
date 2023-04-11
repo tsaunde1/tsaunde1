@@ -1,14 +1,132 @@
 <!DOCTYPE html>
-<html>
-<head>
-<style>
-body {background-color: lightblue;}
-</style>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta name="description" content="Homework 5 Part 1: Arrays">          
+       <title>CNIT133 HWk5 Part 1</title>
+       <style>
+        .body {
+            background-color: lightblue;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+     table {
+            width: 500px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+      
+        .links td {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+         .error {
+            background-color: white;
+            margin-left: 10px;
+            padding: 3px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- the following script is needed for jquery validation of input -->
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".flip").click(function () {
+                $(".panel").slideToggle("slow");
+            });
+        });
+        $(document).ready(function () {
+            $("#myform").validate({
+                messages: {
+                       fullname: "Required full name",
+                    age: "Enter Age",
+                    browser: "Choose browser",
+                  genres: "Choose preferred movie genre",
+                },
+
+                errorPlacement: function (error, element) {
+                    if (element.is(":radio") || element.is(":checkbox")) {
+                        error.appendTo(element.parent());
+                    } else {
+                        error.insertAfter(element);
+                    }
+                }
+            });
+        });
+    </script>
 </head>
+
 <body>
+    <section class="body">
+        <h1>CNIT 133 Homework 5 part 1</h1>
+        <h2>Feedback</h2>
+        <p>Enter Full name, Age, browser and choice your preferred moive genre. Hit submit once completed.</p>
+        <form id="myform" name="myform">
+            <table>
+                <tr>
+                    <td>Full Name: </td>
+                    <td><input type="text" name="fullname" id="fullname" size="30" class="required" autofocus> </td>
+                </tr>
 
-<h1>Coming Soon</h1>
-<p><a href="index.html">Back to Homework 1</a></p>
+                              <tr>
+                    <td> Age: </td>
+                    <td><input type="radio" id="age1" name="age" value="under 21" class="required">under 21
+                        <input type="radio" id="age2" name="age" value="22-50">22-50
+                        <input type="radio" id="age3" name="age" value="50 over">50 over
+                                            </td>
+                </tr>
 
+                <tr>
+                    <td>Select Browser: </td>
+                    <td><input type="checkbox" name="browser" id="browser1" value="Firefox" class="required">Firefox
+                        <input type="checkbox" name="browser" id="browser2" value="Safari">Safari
+                        <input type="checkbox" name="browser" id="browser3" value="Edge">Edge
+                        <input type="checkbox" name="browser" id="browser4" value="Chrome">Chrome
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="Movies">Genres: </label> </td>
+                    <td>
+                        <select name="Movies" id="Movies" class="required">
+                            <option value="">--Choose One--</option>
+                            <option value="act">Action</option>
+                            <option value="com">Comedy</option>
+                            <option value="dra">Drama</option>
+                            <option value="doc">Documentary</option>
+                            <option value="scfi">Science Fiction</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" id="submit_button" value="SUBMIT"></td>
+                    <td><input type="reset" value="RESET" onclick="window.location.reload();"></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <section class="links">
+        <h3>Homework Links</h3>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="index.html">Main Homework Page</a></td>
+                <td style="width: 25%;"><a href="Hwk5p2.html">Homework 5 Part 2</a></td>
+                <td style="width: 25%;"><a href="hw5p3.html">Homework 5 Part 3</a></td>
+            </tr>
+        </table>
+    </section>
 </body>
+
 </html>

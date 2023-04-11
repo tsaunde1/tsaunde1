@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Homework 5 Part 2">
+     <title>CNIT 133 Homework 5</title>
+     <script>
+        function redirectTo(myform) {
+            window.location = myform.url_list.options[myform.url_list.selectedIndex].value;
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: lightblue;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .onclick_event,.onchange_event,table {
+            background-color: lightcyan;
+            width: 500px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+         .links {
+            font-size: 13px;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        p {
+            background-color: white;
+            margin: 10px 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CNIT 133 Homework 5 Part 2</h1>
+    <h2>Redirect</h2>
+
+    <section class="onchange_event">
+        <form>
+            <h3>Choose a Bay Area Beach (onchange event handler)</h3>
+            <select name="url_list" id="url_list1" onchange="redirectTo(this.form);">
+                <option>--Beaches--</option>
+                <option
+                    value="https://www.blm.gov/visit/lost-coast-trail">
+                    Black sand beach</option>
+                <option value="https://www.californiabeaches.com/beach/angel-island-perles-beach/">
+                    Perles beach</option>
+                <option value="https://sfbaywatertrail.org/trailhead/encinal-beach/">Encinal beach</option>
+            
+                   
+            </select>
+        </form>
+    </section>
+
+    <section class="onclick_event">
+        <form>
+            <h3>Choose an Bay Area Scoop Shop (onclick event handler)</h3>
+            <select name="url_list" id="url_list2">
+                <option>--Scoop Shop--</option>
+                <option
+                    value="https://loards.com/">
+                    Loards</option>
+                <option value="https://mitchellsicecream.com/">
+                    Mitchells</option>
+                <option value="https://humphryslocombe.com/">Humphry Slocombe</option>
+          </select>
+          <input type="button" value="Go" onclick="redirectTo(this.form);">  
+              </form>
+    </section>
+
+    
+        <h3>Homework Links</h3>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="index.html">Main Page</a></td>
+                <td style="width: 25%;"><a href="hw5.html">Homework 5 Part 1</a></td>
+                <td style="width: 25%;"><a href="hw5p3.html">Homework 5 Part 3</a></td>
+            </tr>
+        </table>
+    
+</body>
+
+</html>

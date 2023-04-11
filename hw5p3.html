@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+   <meta name="description" content="Homework 5 Part 3: Census">
+    <title>Homework 5 Census</title>
+
+    <script>
+        var stateInfo = [["AL", "Alabama", "Montgomery", "4,903,185"], ["AK", "Alaska", "Juneau", "731,545"], ["AZ", "Arizona", "Phoenix", "7,278,717"], ["AR", "Arkansas", "Little Rock", "3,017,825"], ["CA", "California", "Sacramento", "39,512,223"], ["CO", "Colorado", "Denver", "5,758,736"]];
+
+        function process() {
+            var searchKey = document.forms["searchform"].elements["input"].value;
+            searchKey = searchKey.toUpperCase();
+            if (searchKey.match(/^[a-zA-Z]+$/)) {
+                var found = false;
+                for (var i = 0; i < stateInfo.length; i++) {
+                    if (searchKey == stateInfo[i][0] || searchKey == stateInfo[i][1]) {
+                        document.getElementById("result").innerHTML = "Thanks for your inquiry, the information you requested:<br> State abbr. = " + stateInfo[i][0] + "<br> State Name = " + stateInfo[i][1] + "<br> Capital =" + stateInfo[i][2] + "<br> Population = " + stateInfo[i][3];
+                        i = stateInfo.length;
+                        found = true;
+                    }
+                }
+
+                if (found == false) {
+                    document.getElementById("result").innerHTML = "Sorry, we do not have information about this state, we only have information about AL, AK, AZ, AR, CA, and CO.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Please enter a valid state name!";
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: aliceblue;
+            margin: 20px auto;
+            text-align: center;
+        }
+       
+        
+        .links td {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        p {
+            background-color: white;
+            margin: 10px 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .result{
+            background-color: white;
+            font-weight: bold;
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="body">
+        <h1>CNIT 133 Homework 5 Part 3</h1>
+        <h2>State Population Check</h2>
+        <p>Enter a state name or Abbreviation below and click "State Info" to
+            display State Name, State Capital, and population.</p>
+        <form name="searchform">
+            <input type="text" size="15" name="input" autofocus>
+            <input type="button" value="State Info" name="search" id="search" onclick="process();">
+        </form>
+
+        <div class="result" id="result">
+
+        </div>
+
+        <input type="reset" value="Reset" onclick="location.reload();">
+    </section>
+
+    <section class="links">
+        <h3>Links</h3>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="index.html">Main Page</a></td>
+                <td style="width: 25%;"><a href="hw5.html">Homework 5 Part 1</a></td>
+                <td style="width: 25%;"><a href="Hwk5p2.html">Homework 5 Part 2</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

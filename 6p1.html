@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Homework 6 Part 1">
+    <title>CNIT133 HWK6 Part 1</title>
+    <style>
+        .body {
+            background-color: lightblue;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        table {
+            width: 500px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        h1 {
+            border-radius: 15px;
+            margin: 15px;
+        }
+
+        h2 {
+            background-color: lightblue;
+            border-radius: 15px;
+            margin: auto 220px;
+        }
+
+        .links {
+            font-size: 15px;
+            background-color: aliceblue;
+          border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        p {
+            background-color: lightcyan;
+            margin: 10px 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+    </style>
+    
+    <script>
+        function roundNumber() {
+            var errMsg = "at LEAST 4 decimal positions";
+
+            if (isNaN(document.getElementById("userinput").value) || (document.getElementById("userinput").value) == "") {
+                document.getElementById("results").innerHTML = errMsg;
+            } else {
+                var num = parseFloat(document.getElementById("userinput").value);
+                var checkNum = num.toString();
+                if (checkNum.indexOf('.') != -1) {
+                    var period = checkNum.split('.');
+                    if (period[1].length >= 4) {
+                        var result =
+                            " You typed number: " + num +                                         
+                             "\n Rounded to the nearest integer: " +
+                            roundToIntegerRound(num) +
+                            "\n Square root rounded to integer: " +
+                            squareRootRoundToInteger(num) +
+                            "\n Rounded to the nearest 10th position: " +
+                            roundToTenthsTofixed(num) +
+                            "\n Rounded to the nearest 100th position: " +
+                            roundToHundredsTofixed(num) +
+                            "\n Rounded to the nearest 1000th position: " +
+                             roundToThousandsTofixed(num);
+                            document.getElementById("results").innerHTML = result;
+                    } else {
+                        document.getElementById("results").innerHTML = errMsg;
+                    }
+                } else {
+                    document.getElementById("results").innerHTML = errMsg;
+                }
+            }
+            
+        }
+
+         function roundToIntegerRound(number) {
+            return (Math.round(number)); 
+        }
+
+       function squareRootRoundToInteger(number) {
+            return (Math.round(Math.sqrt(number)));
+        }
+
+        function roundToTenthsTofixed(number) {
+            return (number.toFixed(1));
+        }
+
+        function roundToHundredsTofixed(number) {
+            return (number.toFixed(2));
+        }
+
+        function roundToThousandsTofixed(number) {
+            return (number.toFixed(3));
+        }
+    </script>
+
+</head>
+
+<body>
+    <section class="body">
+        <h1>CNIT 133 Homework 6 Part 1</h1>
+        <p>Enter a number with <b>AT LEAST 4 decimal positions: </b></p>
+        <form id="myform" name="myform">
+            <table>
+                <tr>
+                    <td><input type="number" name="userinput" id="userinput" class="required" autofocus> </td>
+                </tr>
+                <tr>
+                    <td> <input type="button" value="Round" onclick="roundNumber()"></td>
+                    <td><input type="reset" value="RESET" onclick="window.location.reload();"></td>
+                </tr>
+            </table>
+        </form>
+
+        <textarea class="results" id="results" rows="15" cols="60" readonly>
+        </textarea>
+    </section>
+
+    <section class="links">
+        <h3>Homework Links </h3>
+        <table style="width: 50%;">
+            <tr style="width: 75%;">
+                <td style="width: 25%;"><a href="hw6.html">Homework 6</a></td>
+                <td style="width: 25%;"><a href="6p2.html">Homework 6 Part 2</a></td>
+                <td style="width: 25%;"><a href="6p3.html">Homework 6 Part 3</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

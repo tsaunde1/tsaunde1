@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>CNIT 133 Homework 7 Part 1</title>
+  
+  <meta name="description" content="Object Model and Miscellaneous jQuery">
+    <style> h1 {
+        text-align: center;
+      }</style>  
+  <!--change page font color and size-->
+  <script> 
+
+    window.onload = function () {
+
+    
+
+        document.getElementById("inputBackgroundColor").onchange = functionChangeBackgroundColor;
+
+        function functionChangeBackgroundColor() {
+          var inputBackgroundColor = document.querySelector('input[name="backgroundColor"]:checked').value;
+
+          switch (inputBackgroundColor) {
+            case 'white': 
+              document.body.style.backgroundColor = 'white';
+              break;
+            case 'green': 
+              document.body.style.backgroundColor = '#00E676';
+              break;
+            case 'blue':
+              document.body.style.backgroundColor = '#C5EFF7';
+              break;
+          } 
+        } 
+
+        document.getElementById("inputFontSize").onchange = functionChangeFontSize;
+
+        function functionChangeFontSize() {
+          var inputFontSize = document.getElementById("inputFontSize").value;
+
+          switch (inputFontSize) {
+            case 'small': 
+       
+              document.body.style.fontSize = '.875rem';
+              break;
+            case 'medium': 
+              document.body.style.fontSize = '1rem';
+              break;
+            case 'large':
+              document.body.style.fontSize = '1.25rem';
+              break;
+          } 
+        } 
+
+        document.getElementById("inputFontStyle").onchange = functionChangeFontStyle;
+
+        function functionChangeFontStyle() {
+
+          var fontStyleItalic = document.getElementById("fontStyleItalic");
+          var fontWeightBold = document.getElementById("fontWeightBold");
+
+          if (fontStyleItalic.checked === true) {
+            document.body.style.fontStyle = 'italic';
+          } else {
+            document.body.style.fontStyle = 'normal';
+          }
+
+          if (fontWeightBold.checked === true) {
+            document.body.style.fontWeight = '700';
+
+          } else {
+            document.body.style.fontWeight = '400';
+          }
+
+        } 
+
+
+
+    } 
+        
+  </script>
+
+</head>
+
+<body>
+
+  <header class="container">
+    <h1>CNIT 133 Homework 7: Object Model and Miscellaneous jQuery</h1>
+  </header>
+
+  <main class="container">
+
+    <h2>Part 1: Page Layout and Formatting</h2>
+
+    <form id="formChangeCSS">
+
+      <!--Radio group-->
+      <fieldset class="inputInline" id="inputBackgroundColor">
+        <legend>Background color:</legend>
+
+        <div>
+          <input type="radio" id="backgroundColorChoice1" name="backgroundColor" value="white" checked>
+          <label for="backgroundColorChoice1">White</label>
+        </div>
+
+        <div>
+          <input type="radio" id="backgroundColorChoice2" name="backgroundColor" value="green">
+          <label for="backgroundColorChoice2">Green</label>
+        </div>
+
+        <div>
+          <input type="radio" id="backgroundColorChoice3" name="backgroundColor" value="blue">
+          <label for="backgroundColorChoice3">Blue</label>
+        </div>
+      </fieldset>
+      
+      <!--Dropdown-->
+      <fieldset class="inputInline" id="inputFontsize">
+       <legend>Font Size:</legend>                                             <label for="inputFontSize">Font size:</label>
+      <select id="inputFontSize" name="inputFontSize">
+       <!--size-->
+        <option value="small">14px</option> 
+        <option value="medium" selected="selected">16px</option>
+        <option value="large">18px</option>
+      </select>
+       </fieldset>
+      
+      <!--Check group-->
+      <fieldset class="inputInline" id="inputFontStyle">
+        <legend>Font style &amp; weight:</legend>
+        <div>
+          <input type="checkbox" id="fontWeightBold" name="fontStyle" value="bold">
+          <label for="fontWeightBold">Bold</label>
+        </div>
+        <div>
+          <input type="checkbox" id="fontStyleItalic" name="fontStyle" value="italic">
+          <label for="fontStyleItalic">Italic</label>
+        </div>
+      </fieldset>
+
+    </form>
+
+  </main>
+     <ul>
+        <li><a href="index.html">Main Homework Page</a></li>
+        <li><a href="hw7.html">Homework 7</a></li>
+        <li><a href="7p2.html">Homework 7 Part 2</a></li>
+      </ul>
+</body>
+</html>

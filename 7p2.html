@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+               <title>Homework 7 Part 2</title>
+        <meta name="description" content="Mouseover">
+        <meta charset="utf-8">
+       
+        <!-- create a code that will mouseover links -->
+<style>
+body {
+       background-color: lightblue;
+        }
+  h1 {
+  text-align: center;
+}
+  h2{text-align: center; }
+  </style>
+       <!--slide down-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script>
+$(document).ready(function(){
+$('nav li ul').hide().removeClass('fallback');
+$('nav li').hover(
+  function () {
+    $('ul', this).stop().slideDown(300);
+  },
+  function () {
+    $('ul', this).stop().slideUp(200);
+  }
+);
+});
+</script>
+          
+        
+</head>    
+<body>
+        <h1>CNIT 133 Homework 7 Object Model and Miscellaneous jQuery</h1>
+  <h2>Create a code that will mouseover links </h2>
+        <nav>
+  <ul>
+   <li><a href="index.html">Main Homework Page</a></li>   
+    <li>
+      <a href="hw2.html">Homework 2</a>
+      <ul class="fallback">
+        <li><a href="part1.html">Part 1</a></li>
+        <li><a href="part2.html">Part 2</a></li>
+              </ul>
+    </li>
+    <li>
+      <a href="hw3.html">Homework 3</a>
+      <ul class="fallback">
+        <li><a href="Hwk3P2.html">Part 2</a></li>
+        <li><a href="Hwk3P3.html">Part 3</a></li>
+      </ul>
+    </li>
+          <li>
+      <a href="hw4.html">Homework 4</a>
+      <ul class="fallback">
+        <li><a href="hw4P2.html">Part 2</a></li>
+      </ul>
+    </li>
+    <li>
+        <a href="hw7.html">Homework 7</a>
+        <ul class="fallback">
+          <li><a href="7p1.html">Part 1</a></li>
+        </ul>
+      </li>  
+  </ul>
+</nav>      
+    </body>
+</html>
